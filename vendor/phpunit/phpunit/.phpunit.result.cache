@@ -1,1 +1,1 @@
-{"version":1,"defects":{"ExampleTest::testAddingTwoPlusTwoResultsInFour":7,"FunctionTest::testAddReturnsCorrectSum":7},"times":{"ExampleTest::testAddingTwoPlusTwoResultsInFour":0.008,"FunctionTest::testAddReturnsCorrectSum":0.002}}
+{"version":1,"defects":{"ExampleTest::testAddingTwoPlusTwoResultsInFour":7,"FunctionTest::testAddReturnsCorrectSum":7},"times":{"ExampleTest::testAddingTwoPlusTwoResultsInFour":0.008,"FunctionTest::testAddReturnsCorrectSum":0.001,"FunctionTest::testAddDoesNotReturnsIncorrectSum":0.002}}
