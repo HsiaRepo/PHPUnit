@@ -27,6 +27,6 @@ class User
      */
     public function getFullName()
     {
-        return "$this->first_name $this->surname";
+        return trim("$this->first_name $this->surname");
     }
 }
