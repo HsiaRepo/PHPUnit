@@ -2,12 +2,12 @@
 
 
 use PHPUnit\Framework\TestCase;
+use src\User;
 
 class UserTest extends TestCase
 {
     public function testReturnsFullName()
     {
-        require 'User.php';
 
         $user = new User;
 
