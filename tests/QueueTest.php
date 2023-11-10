@@ -27,9 +27,10 @@ class QueueTest extends TestCase
     {
         $queue = new Queue;
         $queue->push('Bobby');
-        $queue->pop();
+        $item = $queue->pop();
 
         $this->assertEquals(0, $queue->getCount());
+        $this->assertEquals('Bobby', $item);
 
     }
 
