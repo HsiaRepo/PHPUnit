@@ -38,4 +38,14 @@ class QueueTest extends TestCase
 
         $this->assertEquals('green', $item);
     }
+
+    public function testAnItemIsRemovedFromTheFrontOfQueue()
+    {
+        $this->queue->push('first');
+        $this->queue->push('second');
+
+        $item = $this->queue->pop();
+
+        $this->assertEquals('first', $item);
+    }
 }
