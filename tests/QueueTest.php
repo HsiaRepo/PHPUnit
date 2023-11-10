@@ -23,4 +23,14 @@ class QueueTest extends TestCase
 
     }
 
+    public function testAnItemIsRemovedFromQueue()
+    {
+        $queue = new Queue;
+        $queue->push('Bobby');
+        $queue->pop();
+
+        $this->assertEquals(0, $queue->getCount());
+
+    }
+
 }
