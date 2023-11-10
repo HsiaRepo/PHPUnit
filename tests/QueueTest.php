@@ -4,48 +4,51 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
-    protected $queue;
+    protected static $queue;
 
     protected function setUp(): void
     {
-        $this->queue = new Queue;
+        static::$queue->clear();
     }
 
-    protected function tearDown(): void
+    public static function setUpBeforeClass(): void
     {
-        unset($this->queue);
+        static::$queue = new Queue;
+    }
+
+    public static function tearDownAfterClass(): void
+    {
+        static::$queue = null;
     }
 
     public function testNewQueueIsEmpty()
     {
-        $this->assertEquals(0, $this->queue->getCount());
+        $this->assertEquals(0, static::$queue->getCount());
     }
 
     public function testAnItemIsAddedToQueue()
     {
-        $this->queue->push('green');
+        static::$queue->push('green');
 
-        $this->assertEquals(1, $this->queue->getCount());
+        $this->assertEquals(1, static::$queue->getCount());
     }
 
     public function testAnItemIsRemovedFromQueue()
     {
-        $this->queue->push('green');
+        static::$queue->push('green');
 
-        $item = $this->queue->pop();
+        $item = static::$queue->pop();
 
-        $this->assertEquals(0, $this->queue->getCount());
+        $this->assertEquals(0, static::$queue->getCount());
 
         $this->assertEquals('green', $item);
     }
 
     public function testAnItemIsRemovedFromTheFrontOfQueue()
     {
-        $this->queue->push('first');
-        $this->queue->push('second');
+        static::$queue->push('first');
+        static::$queue->push('second');
 
-        $item = $this->queue->pop();
-
-        $this->assertEquals('first', $item);
+        $this->assertEquals('first', static::$queue->pop());
     }
 }
