@@ -18,10 +18,6 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixLengthsPsr4 = array (
-        's' => 
-        array (
-            'src\\' => 4,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -54,10 +50,6 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixDirsPsr4 = array (
-        'src\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -114,6 +106,10 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/src',
     );
 
     public static $classMap = array (
@@ -1283,6 +1279,7 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b::$classMap;
 
         }, null, ClassLoader::class);

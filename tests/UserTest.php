@@ -2,7 +2,6 @@
 
 
 use PHPUnit\Framework\TestCase;
-use src\User;
 
 class UserTest extends TestCase
 {
