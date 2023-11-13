@@ -12,7 +12,7 @@ class MockTest extends TestCase
         $mock->method('sendMessage')
             ->willReturn(true);
 
-        $result = $mock->sendMessage('logan@example.com', 'werd');
+        $result = $mock->sendMessage('logan@hsia.us', 'werd');
 
         $this->assertTrue($result);
     }
@@ -23,13 +23,15 @@ class MockTest extends TestCase
 
         $mock_mailer = $this->createMock(Mailer::class);
 
-        $mock_mailer->method('sendMessage')
+        $mock_mailer->expects($this->once())
+            ->method('sendMessage')
+            ->with($this->equalTo('logan@hsia.us'), $this->equalTo('werd'))
             ->willReturn(true);
 
         $user->setMailer($mock_mailer);
 
         $user->email = 'logan@hsia.us';
 
-        $this->assertTrue($user->notify("herd"));
+        $this->assertTrue($user->notify("werd"));
     }
 }
