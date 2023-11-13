@@ -34,4 +34,19 @@ class MockTest extends TestCase
 
         $this->assertTrue($user->notify("werd"));
     }
+
+    public function testCannotNotifyUserWithNoEmail()
+    {
+        $user = new User;
+
+        $mock_mailer = $this->getMockBuilder(Mailer::class)
+                            ->onlyMethods([])
+                            ->getMock();
+
+        $user->setMailer($mock_mailer);
+
+        $this->expectException(Exception::class);
+
+        $user->notify("werd");
+    }
 }
