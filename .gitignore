@@ -1,0 +1,2 @@
+# Ignore test-results file
+.phpunit.cache/test-results
