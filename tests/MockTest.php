@@ -26,7 +26,7 @@ class MockTest extends TestCase
         $mock_mailer->method('sendMessage')
             ->willReturn(true);
 
-        $user->setMailer(new Mailer);
+        $user->setMailer($mock_mailer);
 
         $user->email = 'logan@hsia.us';
 
