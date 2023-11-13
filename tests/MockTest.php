@@ -9,8 +9,11 @@ class MockTest extends TestCase
     {
         $mock = $this->createMock(Mailer::class);
 
+        $mock->method('sendMessage')
+            ->willReturn(true);
+
         $result = $mock->sendMessage('logan@example.com', 'werd');
 
-        var_dump($result);
+        $this->assertTrue($result);
     }
 }
