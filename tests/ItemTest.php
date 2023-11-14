@@ -17,4 +17,11 @@ class ItemTest extends TestCase
 
         $this->assertIsInt($item->getID());
     }
+
+    public function testTokenIsAString()
+    {
+        $item = new ItemChild;
+
+        $this->assertIsString($item->getToken());
+    }
 }
