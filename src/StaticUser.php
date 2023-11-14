@@ -15,6 +15,12 @@ class StaticUser
     public $email;
 
     /**
+     * Mailer object
+     * @var StaticMailer
+     */
+    protected $mailer;
+
+    /**
      * Constructor
      *
      * @param string $email The user's email
@@ -27,6 +33,17 @@ class StaticUser
     }
 
     /**
+     * Mailer setter
+     *
+     * @param StaticMailer $mailer A Mailer object
+     *
+     * @return void
+     */
+    public function setMailer(StaticMailer $mailer) {
+        $this->mailer = $mailer;
+    }
+
+    /**
      * Send the user a message
      *
      * @param string $message The message
@@ -35,6 +52,6 @@ class StaticUser
      */
     public function notify(string $message)
     {
-        return StaticMailer::send($this->email, $message);
+        return $this->mailer::send($this->email, $message);
     }
 }
