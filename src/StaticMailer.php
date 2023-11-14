@@ -24,7 +24,7 @@ class StaticMailer
             throw new InvalidArgumentException;
         }
 
-        echo "Send '$message' to $email";
+        // echo "Send '$message' to $email";
 
         return true;
     }
