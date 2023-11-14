@@ -10,6 +10,10 @@ class StaticUserTest extends TestCase
     {
         $user = new StaticUser('logan@hsia.us');
 
+        $mailer = new StaticMailer;
+
+        $user->setMailer($mailer);
+
         $this->assertTrue($user->notify('amogus'));
     }
 
