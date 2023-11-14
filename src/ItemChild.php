@@ -7,8 +7,8 @@ class ItemChild extends Item
         return parent::getID();
     }
 
-    public function getToken()
-    {
-        return parent::getToken();
-    }
+//    public function getToken()
+//    {
+//        return parent::getToken();
+//    }
 }
